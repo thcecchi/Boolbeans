@@ -56,6 +56,7 @@ console.log(valArr)
 // FIND FARMS
 $(".submitButton").click(function () {
   var findFarms = function(farmName) {
+
     if (csaInfo[farmName]["pickUp"].hasOwnProperty(valArr[0]) && csaInfo[farmName]["pricesPerBag"].hasOwnProperty(valArr[1])) {
       console.log(csaInfo[farmName]["farmName"]);
       console.log(csaInfo[farmName]["pricesPerBag"][valArr[1]]);
@@ -63,8 +64,19 @@ $(".submitButton").click(function () {
       console.log(csaInfo[farmName]["organizations_url"]);
     }
   }
-    findFarms("Ambrose","Gruber","Hudson","Legare","Rosebank");
+    findFarms("Ambrose")
+    findFarms("Gruber")
+    findFarms("Hudson")
+    findFarms("Legare")
+    findFarms("Rosebank")
 });
+
+// function foo() {
+//   for (var i = 0, j = arguments.length; i < j; i++){
+//     document.write(arguments[i]+' ');
+//   }
+//   document.write('<br />');
+// }
 
 },
 
