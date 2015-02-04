@@ -47,19 +47,15 @@ var appPage =
       }
 
 
-      for (var i in currentProducts) {
-        console.log(currentProducts[i]);
+      newProductList = {
+        list: currentProducts
       }
 
-      var newProductList = {
-        // list: splitProducts
-        list: currentProducts[i]
-      }
-
-
-    var inSeasonCompiled = _.template(templates.inSeason);
-    console.log(inSeasonCompiled(newProductList));
-    $(".inSeasonBoard").append(inSeasonCompiled(newProductList));
+      _.each(appPage.newProductList, function (element, index, list) {
+        var inSeasonCompiled = _.template(templates.inSeason);
+        console.log(inSeasonCompiled(appPage.newProductList["list"][index]));
+        $(".inSeasonBoard").append(inSeasonCompiled(appPage.newProductList["list"]));
+      })
 
   },
 
